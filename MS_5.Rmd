@@ -1,0 +1,45 @@
+---
+title: "MS_5"
+author: "JBR"
+date: "3/20/2020"
+output: html_document
+---
+
+I am debating pivoting to the Coronavirus as more data comes out by country, so I am currently leveraging the gapminder dataset. 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(infer)
+library(readxl)
+library(dplyr)
+library(readr)
+library(ggplot2)
+library(tidyr)
+library(tidyverse)
+library(purrr)
+library(tibble)
+library(stringr)
+library(forcats)
+library(ggthemes)
+library(janitor)
+library(knitr)
+library(gapminder)
+
+
+```
+
+
+```{r, include = TRUE}
+
+
+ms_5 <- gapminder%>%
+  filter(continent == "Asia")
+
+
+ggplot(ms_5, mapping = aes(year, gdpPercap))+
+geom_point()+
+facet_wrap(~country)
+  
+
+```
+
